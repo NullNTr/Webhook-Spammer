@@ -130,7 +130,7 @@ function start(){
   const limit=parseInt(limitEl.value)||Infinity;
 
   if(!url||!msg){
-    statusEl.textContent="必須項目が未入力";
+    statusEl.textContent="入力してないところあるよ";
     return;
   }
   if(msg.length>500){
@@ -148,7 +148,7 @@ function start(){
 
   timer=setInterval(()=>{
     if(count>=limit){
-      log("■ 上限到達 停止");
+      log("■ 上限到達しました 停止");
       stop();
       return;
     }
@@ -169,7 +169,7 @@ function sendOnce(){
     countEl.textContent=count;
     log("✔ 送信成功 ("+count+")");
   }).catch(()=>{
-    log("✖ 送信失敗 停止");
+    log("✖ 送信失敗");
     stop();
   });
 }
